@@ -136,6 +136,7 @@ function library:CreateWindow(name, keyCode)
 	TopLabel.Size = UDim2.new(0, 202, 0, 30)
 	TopLabel.ZIndex = 0
 	TopLabel.Text = name
+        TopLabel.Font = "FredokaOne"
 	TopLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TopLabel.TextSize = 14.000
 	TopLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
@@ -152,6 +153,7 @@ function library:CreateWindow(name, keyCode)
 	SizeToggle.Size = UDim2.new(0, 30, 0, 30)
 	SizeToggle.Modal = true
 	SizeToggle.Text = "-"
+        SizeToggle.Font = "FredokaOne"
 	SizeToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 	SizeToggle.TextScaled = true
 	SizeToggle.TextSize = 14.000
@@ -236,7 +238,7 @@ function library:CreateNotification(title, txt)
 	Title.BackgroundTransparency = 1.000
 	Title.Position = UDim2.new(0, 0, -0.00985222869, 0)
 	Title.Size = UDim2.new(0, 278, 0, 27)
-	Title.Font = Enum.Font.SourceSans
+	Title.Font = Enum.Font.FredokaOne
 	Title.Text = title
 	Title.TextColor3 = Color3.fromRGB(208, 208, 208)
 	Title.TextScaled = true
@@ -256,7 +258,7 @@ function library:CreateNotification(title, txt)
 	Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Text.BackgroundTransparency = 1.000
 	Text.Size = UDim2.new(0, 278, 0, 118)
-	Text.Font = Enum.Font.SourceSans
+	Text.Font = Enum.Font.FredokaOne
 	Text.Text = txt --"actz kiss 3dsboy08"
 	Text.TextColor3 = Color3.fromRGB(208, 208, 208)
 	Text.TextSize = 25.000
@@ -367,6 +369,7 @@ function library:CreateButton(window, text, func)
 	Button.Position = UDim2.new(0.0291666668, 0, 0.125, 0)
 	Button.Size = UDim2.new(0, 227, 0, 30)
 	Button.Text = text
+        Button.Font = "FredokaOne"
 	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Button.TextSize = 15.000
 	Button.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
@@ -455,6 +458,7 @@ function library:CreateToggle(window, text, currentState, func)
 	ToggleBtn.Selectable = false
 	ToggleBtn.Size = UDim2.new(0, 30, 0, 30)
 	ToggleBtn.Text = ""
+        ToggleBtn.Font = "FredokaOne"
 	ToggleBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
 	ToggleBtn.TextSize = 1.000
 	ToggleBtn.TextTransparency = 1.000
@@ -489,6 +493,7 @@ function library:CreateToggle(window, text, currentState, func)
 	ToggleLabel.Selectable = true
 	ToggleLabel.Size = UDim2.new(0, 190, 0, 30)
 	ToggleLabel.Text = text
+        ToggleLabel.Font = "FredokaOne"
 	ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	ToggleLabel.TextSize = 15.000
 	ToggleLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
