@@ -41,7 +41,11 @@ function library:CreateWindow(name, keyCode)
 	local TopLabel = Instance.new("TextLabel")
 	local SizeToggle = Instance.new("TextButton")
 	local listLayout = Instance.new("UIListLayout")
-	
+	local UIStroke = Instance.new("UIStroke")
+        local _UIStroke = Instance.new("UIStroke")
+
+
+
 	randomize.Name = tostring(math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9).."_BACONLIB")
 	randomize.Parent = game:GetService("CoreGui").RobloxGui or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
 	randomize.DisplayOrder = 100
@@ -52,10 +56,10 @@ function library:CreateWindow(name, keyCode)
 	-- Custom drag system added.
 	--TopBar.Active = true
 	--TopBar.Draggable = true
-	TopBar.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+	TopBar.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	TopBar.BorderSizePixel = 0
 	TopBar.Position = UDim2.new(0.489757448, 0, 0.489311516, 0)
-	TopBar.Size = UDim2.new(0, 240, 0, 30)
+	TopBar.Size = UDim2.new(0, 240, 0, 50)
 	TopBar.ZIndex = 0
 	
 	local UserInputService = game:GetService("UserInputService")
@@ -118,7 +122,7 @@ function library:CreateWindow(name, keyCode)
 	
 	Container.Name = "Container"
 	Container.Parent = TopBar
-	Container.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+	Container.BackgroundColor3 = Color3.new(0.1,0.1,0.1)
 	Container.BorderSizePixel = 0
 	Container.ClipsDescendants = true
 	Container.Position = UDim2.new(-0.000485992437, 0, 0.974092603, 0)
@@ -133,12 +137,12 @@ function library:CreateWindow(name, keyCode)
 	TopLabel.BorderSizePixel = 0
 	TopLabel.Position = UDim2.new(0.0291666668, 0, -0.00833333377, 0)
 	TopLabel.Selectable = true
-	TopLabel.Size = UDim2.new(0, 202, 0, 30)
+	TopLabel.Size = UDim2.new(0, 202, 0, 50)
 	TopLabel.ZIndex = 0
 	TopLabel.Text = name
         TopLabel.Font = "FredokaOne"
 	TopLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TopLabel.TextSize = 14.000
+	TopLabel.TextSize = 20.000
 	TopLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 	TopLabel.TextWrapped = true
 	TopLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -162,7 +166,12 @@ function library:CreateWindow(name, keyCode)
 	
 	listLayout.SortOrder = Enum.SortOrder.LayoutOrder
 	listLayout.Parent = Container
-	
+
+        UIStroke.Color = Color3.new(1)
+        UIStroke.Parent = TopBar
+
+        _UIStroke.Color = Color3.new(1)
+        _UIStroke.Parent = Container
 	-- Setup the scripting part
 	spawn(function()
 		local TweenService = game:GetService("TweenService") 
@@ -313,7 +322,8 @@ function library:CreateLabel(window, text)
 	
 	local omg_its_a_label = Instance.new("Frame")
 	local Label = Instance.new("TextLabel")
-	
+	local uistroke = Instance.new("UIStroke")
+
 	omg_its_a_label.LayoutOrder = 1
 	omg_its_a_label.Name = "omg_its_a_label"
 	omg_its_a_label.Parent = window.TopBar.Container
@@ -333,11 +343,15 @@ function library:CreateLabel(window, text)
 	Label.Position = UDim2.new(0.0291666668, 0, 0.125, 0)
 	Label.Selectable = true
 	Label.Size = UDim2.new(0, 227, 0, 30)
+        Label.Font = "FredokaOne"
 	Label.Text = text
 	Label.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Label.TextSize = 15.000
 	Label.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 	Label.TextWrapped = true
+
+        uistroke.Color = Color3.new(1)
+        uistroke.Parent = omg_its_a_label
 	increase(window)
 	
 	return Label
@@ -351,7 +365,7 @@ function library:CreateButton(window, text, func)
 	
 	local xd_button_yey = Instance.new("Frame")
 	local Button = Instance.new("TextButton")
-	
+	local uistroke = Instance.new("UIStroke")
 	xd_button_yey.LayoutOrder = 1
 	xd_button_yey.Name = "xd_button_yey"
 	xd_button_yey.Parent = window.TopBar.Container
@@ -374,13 +388,16 @@ function library:CreateButton(window, text, func)
 	Button.TextSize = 15.000
 	Button.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 	Button.TextWrapped = true
+
+        uistroke.Color = Color3.new(1)
+        uistroke.Parent = xd_button_yey
 	increase(window)
 	Button.MouseButton1Down:Connect(func)
 	
 	return Button
 end
 
-function library:CreateTextBox(window, font, placeholderText, text, callback)
+--[[function library:CreateTextBox(window, font, placeholderText, text, callback)
 	if not window:IsA("ScreenGui") then error("Specify a gui.", 0) return false end
 	if not window:FindFirstChild("TopBar") then error("That's not a gui created by the library!", 0) return false end
 	if not typeof(font) == "EnumItem" then error("The second argument isn't a font enum!", 0) return false end
@@ -424,7 +441,7 @@ function library:CreateTextBox(window, font, placeholderText, text, callback)
 	increase(window)
 	
 	return _TextBox
-end
+end]]-- need time to repair
 
 function library:CreateToggle(window, text, currentState, func)
 	if not window:IsA("ScreenGui") then error("Specify a gui.", 0) return false end
@@ -437,7 +454,8 @@ function library:CreateToggle(window, text, currentState, func)
 	local ToggleBtn = Instance.new("TextButton")
 	local ToggleBtn_Roundify_4px = Instance.new("ImageLabel")
 	local ToggleLabel = Instance.new("TextLabel")
-	
+	local uistroke = Instance.new("UIStroke")
+
 	wow_a_toggle_owo.LayoutOrder = 1
 	wow_a_toggle_owo.Name = "wow_a_toggle_owo"
 	wow_a_toggle_owo.Parent = window.TopBar.Container
