@@ -675,13 +675,14 @@ function library:CreateSlider(window, name, min, max, current, callback)
 					tween = TweenService:Create(CurrBar, tweenInfo, {Size = UDim2.new(0, Bar.AbsoluteSize.X, 1, 0)})
 				else
 					tween = TweenService:Create(CurrBar, tweenInfo, {Size = UDim2.new(0, (PlayerMouse.X - Bar.AbsolutePosition.X), 1, 0)})
-				
-				tween:Play()
-                                else
-                                tween:Cancel()
+                                
 				end
+                                tween:Play()
+
 				currSize = getSize(Bar, min, max)
 				ValueTxt.Text = currSize
+                                wait(0.1)
+                                tween:Cancel()
 			end
 		end)
 	end)()
