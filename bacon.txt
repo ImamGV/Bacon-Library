@@ -517,6 +517,11 @@ function library:CreateToggle(window, text, currentState, func)
 	ToggleLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 	ToggleLabel.TextWrapped = true
 	ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+        uistroke.Color = Color3.new()
+        uistroke.Parent = wow_a_toggle_owo
+        uistroke.Thickness = 0.5
+
 	increase(window)
 	
 	local TweenService = game:GetService("TweenService")
@@ -552,7 +557,8 @@ function library:CreateSlider(window, name, min, max, current, callback)
 	local Current = Instance.new("Frame")
 	local Value = Instance.new("TextLabel")
 	local Label = Instance.new("TextLabel")
-	
+	local uistroke = Instance.new("UIStroke")
+
 	woah_a_slider.LayoutOrder = 1
 	woah_a_slider.Name = "woah_a_slider"
 	woah_a_slider.Parent = window.TopBar.Container
