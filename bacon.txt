@@ -678,11 +678,11 @@ function library:CreateSlider(window, name, min, max, current, callback)
                                 
 				end
                                 tween:Play()
-
+wait(0.1)
+                                tween:Cancel()
 				currSize = getSize(Bar, min, max)
 				ValueTxt.Text = currSize
-                                wait(0.1)
-                                tween:Cancel()
+                                
 			end
 		end)
 	end)()
