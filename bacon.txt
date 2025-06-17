@@ -1,5 +1,5 @@
 -- BaconLib v1.2 by H3x0R
-_BLVersion = "1.2"
+_BLVersion = "2.0"
 _BLChangelog = [[
     v1.1:
         Added keybinds, sliders, and you have asked, so you got dropdowns too!
@@ -377,7 +377,7 @@ function library:CreateButton(window, text, func)
 	
 	Button.Name = "Button"
 	Button.Parent = xd_button_yey
-	Button.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
+	Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 	Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Button.BorderSizePixel = 0
 	Button.Position = UDim2.new(0.0291666668, 0, 0.125, 0)
@@ -675,10 +675,11 @@ function library:CreateSlider(window, name, min, max, current, callback)
 					tween = TweenService:Create(CurrBar, tweenInfo, {Size = UDim2.new(0, Bar.AbsoluteSize.X, 1, 0)})
 				else
 					tween = TweenService:Create(CurrBar, tweenInfo, {Size = UDim2.new(0, (PlayerMouse.X - Bar.AbsolutePosition.X), 1, 0)})
-				end
 				
 				tween:Play()
-				
+                                else
+                                tween:Cancel()
+				end
 				currSize = getSize(Bar, min, max)
 				ValueTxt.Text = currSize
 			end
