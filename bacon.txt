@@ -520,7 +520,7 @@ function library:CreateToggle(window, text, currentState, func)
 
         uistroke.Color = Color3.new()
         uistroke.Parent = wow_a_toggle_owo
-        uistroke.Thickness = 0.5
+        uistroke.Thickness = 0.9
 
 	increase(window)
 	
