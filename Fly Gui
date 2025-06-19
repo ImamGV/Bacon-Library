@@ -1,0 +1,30 @@
+local ScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+ScreenGui.Name = "FlyGui"
+ScreenGui.ResetOnSpawn = false
+local Frame = Instance.new("Frame", ScreenGui)
+Frame.Position = UDim2.new(0.875, 0, 0.14, 0)
+Frame.BackgroundColor3 = Color3.new(0,0,0)
+Frame.BackgroundTransparency = 0
+Frame.Size = UDim2.new(0.1,0,0.1,0)
+local Fly = Instance.new("TextButton", Frame)
+Fly.Position = UDim2.new(0,0,0,0)
+Fly.BackgroundColor3 = Color3.new(0,0,0)
+Fly.BackgroundTransparency = 1
+Fly.Size = UDim2.new(1,0,1,0)
+Fly.Text = "FLY : OFF"
+Fly.TextSize = "20"
+Fly.Font = "FredokaOne"
+Fly.TextColor3 = Color3.new(1,1,1)
+local UiStroke = Instance.new("UIStroke", Frame)
+UiStroke.Color = Color3.new(1,0,0)
+local UiCorner = Instance.new("UICorner", Frame)
+Fly.MouseButton1Click:Connect(function()
+fly = not fly
+if fly then
+Fly(true)
+Fly.Text = "FLY : ON"
+else
+Fly(false)
+Fly.Text = "FLY : OFF"
+end
+end)
