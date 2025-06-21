@@ -19,12 +19,6 @@ repeat game:GetService("RunService").RenderStepped:Wait() until game:IsLoaded() 
 local library = {}
 local nextAllignmentAnchor = 10
 
-for _, gui in pairs(game:GetService("CoreGui").RobloxGui:GetChildren()) do
-    if gui:IsA("ScreenGui") and string.match(gui.Name, "_BACONLIB") then
-        gui:Destroy()
-    end
-end
-
 for _, gui in pairs(game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):GetChildren()) do
     if gui:IsA("ScreenGui") and string.match(gui.Name, "_BACONLIB") then
         gui:Destroy()
@@ -47,7 +41,7 @@ function library:CreateWindow(name, keyCode)
 
 
 	randomize.Name = tostring(math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9).."_BACONLIB")
-	randomize.Parent = game:GetService("CoreGui").RobloxGui or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+	randomize.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
 	randomize.DisplayOrder = 100
 	randomize.ResetOnSpawn = false
 	
@@ -154,7 +148,7 @@ function library:CreateWindow(name, keyCode)
 	SizeToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	SizeToggle.BorderSizePixel = 0
 	SizeToggle.Position = UDim2.new(0.872619033, 0, -0.00833332539, 0)
-	SizeToggle.Size = UDim2.new(0, 30, 0, 30)
+	SizeToggle.Size = UDim2.new(0, 30, 0, 50)
 	SizeToggle.Modal = true
 	SizeToggle.Text = "-"
         SizeToggle.Font = "FredokaOne"
