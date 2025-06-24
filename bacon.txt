@@ -19,7 +19,7 @@ repeat game:GetService("RunService").RenderStepped:Wait() until game:IsLoaded() 
 local library = {}
 local nextAllignmentAnchor = 10
 
-for _, gui in pairs(game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):GetChildren()) do
+for _, gui in pairs(game:GetService("CoreGui"):WaitForChild("RobloxGui"):GetChildren()) do
     if gui:IsA("ScreenGui") and string.match(gui.Name, "_BACONLIB") then
         gui:Destroy()
     end
@@ -41,7 +41,7 @@ function library:CreateWindow(name, keyCode)
 
 
 	randomize.Name = tostring(math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9).."_BACONLIB")
-	randomize.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+	randomize.Parent = game:GetService("CoreGui"):WaitForChild("RobloxGui")
 	randomize.DisplayOrder = 100
 	randomize.ResetOnSpawn = false
 	
